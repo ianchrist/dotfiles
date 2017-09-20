@@ -1,0 +1,1 @@
+/home/ian/.config/polybar/spotify.sh
