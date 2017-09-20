@@ -1,1 +1,339 @@
-/home/ian/.config/polybar/config
+;-------------------------------------------------
+;                                                ;
+;           Polybar config for Cranium           ;
+;                Hi, /r/unixporn!                ;
+;                                                ;
+;-------------------------------------------------
+
+;-----------------------------------;
+;             Main Bar              ;
+;-----------------------------------;
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #212E36
+background-alt = #3C5A46
+background-unf = #2E463E
+background-mod0 = #3C5A46
+background-mod1 = #546E53
+background-mod2 = #708963
+background-mod3 = #334d3c
+background-mod4 = #293d30
+background-alrt = #A1BB76
+
+;foreground = ${xrdb:color7:#222}
+foreground = #F3F3BA
+foreground-alt = #F3F3BA
+primary = #F3F3BA
+secondary = #F3F3BA
+
+;-----------------------------------;
+;             Main Bar              ;
+;-----------------------------------;
+
+[bar/main]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 30
+offset-x = 0%
+;offset-y = 10%
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Misc Termsyn:size=8;1
+font-1 = FontAwesome:fontformat=truetype:size=12;1
+font-2 = sm4tik:pixelsize=10;1
+
+modules-left = i3
+modules-center = date
+modules-right = spotify back play next memory cpu volume battery
+
+tray-position =hidden
+tray-padding = 11
+tray-transparent = true
+tray-offset-y = 22
+tray-offset-x = -0
+tray-maxsize = 18
+tray-detached = true
+
+wm-restack = i3
+
+;-----------------------------------;
+;           i3 Screen Bar           ;
+;-----------------------------------;
+
+[module/i3]
+type = internal/i3
+label-unfocused-background = ${colors.background-unf}
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = ${colors.background-alt}
+label-focused-underline = #fba922
+label-focused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = ${colors.background-alrt}
+label-urgent-padding = 4
+
+;-----------------------------------;
+;             Date/Time             ;
+;-----------------------------------;
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = "  %a, %b %d, %I:%M %p"
+time-alt = %H:%M:%S
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+;-----------------------------------;
+;              Battery              ;
+;-----------------------------------;
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-full-background = ${colors.background-mod2}
+format-charging-background = ${colors.background-mod2}
+format-charging = "⁣  <label-charging> <animation-charging>  "
+format-charging-underline = #ffb52a
+
+format-discharging-background = ${colors.background-alrt}
+format-discharging = "⁣  <label-discharging> <ramp-capacity>  "
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full = 
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-background = ${colors.background-mod}
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-background = ${colors.background-mod}
+label-close-foreground = ${colors.secondary}
+label-separator = " "
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+
+;-----------------------------------;
+;               Volume              ;
+;-----------------------------------;
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+format-volume-padding = 2
+format-volume-background = ${colors.background-mod1}
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+format-muted-foreground = ${colors.foreground-alt}
+label-muted =   sound muted
+label-muted-padding = 2
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+;-----------------------------------;
+;              Spotify              ;
+;-----------------------------------;
+
+; uses playctl package
+
+[module/spotify]
+type = custom/script
+format-padding = 2
+exec = playerctl metadata artist && echo -n ' - ' && playerctl metadata title
+tail = true
+interval = 2
+
+
+;-----------------------------------;
+;                CPU                ;
+;-----------------------------------;
+[module/cpu]
+type = internal/cpu
+
+interval = 2
+label-background = ${colors.background-mod0}
+label-padding = 2
+label =  %percentage%%
+
+;-----------------------------------;
+;               Memory              ;
+;-----------------------------------;
+[module/memory]
+type = internal/memory
+
+interval = 2
+label-background = ${colors.background-mod3}
+label-padding = 2
+label =  %percentage_used%%
+
+
+;-----------------------------------;
+;           Sound Control           ;
+;-----------------------------------;
+[module/play]
+type = custom/script
+exec = echo 
+label-padding = 2
+click-left = playerctl play-pause --player=spotify
+label-background = ${colors.background-mod4}
+
+[module/next]
+type = custom/script
+exec = echo 
+label-padding = 2
+click-left = playerctl next --player=spotify
+label-background = ${colors.background-mod4}
+
+[module/back]
+type = custom/script
+exec = echo 
+label-padding = 2
+click-left = playerctl previous --player=spotify
+label-background = ${colors.background-mod4}
+
+[module/track_for]
+type = custom/script
+exec = echo 
+label-padding = 0
+click-left = playerctl 10+
+label-background = ${colors.background-mod4}
+
+[module/track_back]
+type = custom/script
+exec = echo 
+label-padding = 0
+click-left = playerctl 10-
+label-background = ${colors.background-mod4}
+;------------END MODULES-----------;
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5

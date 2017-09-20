@@ -1,1 +1,19 @@
-/home/ian/.config/vis/config
+# The width of the bars
+visualizer.spectrum.bar.width=1
+
+# Monstercat smoothing. Bigger
+visualizer.monstercat.smoothing.factor = 5
+
+# Controls which bars drop slow
+# top only applies to top character
+# fill leaves no gaps between top char and rest of bar
+# none removes
+visualizer.spectrum.fallout.mode=none
+
+# Enable stereo mode
+audio.stereo.enabled=true
+
+# Bass is left by default
+visualizer.spectrum.reversed=false
+
+#visualizer.scaling.multiplier=3.0

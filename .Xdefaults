@@ -1,1 +1,54 @@
-/home/ian/.Xdefaults
+! APPEARANCE
+! rxvt size
+URxvt*geometry: 118x30
+
+! font
+URxvt*font: xft:DejaVu Sans Mono For Powerline:pixelsize=13
+
+! get rid of that hideous scroll bar
+URxvt*scrollBar: false
+
+
+! COLORS
+! grounds color
+URxvt*background:   #1e1f28
+URxvt*foreground:   #ebece6
+
+! color scheme
+URxvt*cursorColor: #e4e4e4
+URxvt*color0:      #000
+URxvt*color1:      #fb4245
+URxvt*color2:      #50fa7b
+URxvt*color3:      #f0fa8b
+URxvt*color4:      #49b9fe
+URxvt*color5:      #fb4cb3
+URxvt*color6:      #8be9fd
+URxvt*color7:      #ededec
+URxvt*color8:      #555555
+URxvt*color9:      #fb4245
+URxvt*color10:     #50fa7b
+URxvt*color11:     #f0fa8b
+URxvt*color12:     #49b9fe
+URxvt*color13:     #fb4cb3
+URxvt*color14:     #8be9fd
+URxvt*color15:     #ededec
+
+! transparency for gnome
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+
+!transparency for i3
+URxvt.transparent: true
+URxvt.shading: 25
+
+! FUNCTIONALITY
+! darkens when out of focus
+URxvt*fading: 30
+
+! hotkeys
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! lets us use traditional copy/paste hotkeys above
+URxvt*iso14755:    False
+URxvt*iso14755_52: False
