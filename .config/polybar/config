@@ -61,9 +61,8 @@ font-2 = sm4tik:pixelsize=10;1
 
 modules-left = i3
 modules-center = date
-modules-right = spotify back play next memory cpu volume battery
+modules-right = memory cpu volume battery
 
-tray-position =hidden
 tray-padding = 11
 tray-transparent = true
 tray-offset-y = 22
