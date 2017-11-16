@@ -19,6 +19,11 @@ https://github.com/robbyrussell/oh-my-zsh
 Configuration for the i3 tilling window manager. <br>
 https://i3wm.org/
 
+## .config/galendae/galendae.conf
+Configuration for the galendae calendar. This is acts a a simple drop down box
+if the date/time piece of the polybar is clicked. <br>
+https://github.com/chris-marsh/galendae
+
 ## .config/neofetch/config
 Configuration for neofetch, which is a terminal tool that displays various system information along with a pretty picture of the distribution logo. <br>
 https://github.com/dylanaraps/neofetch
