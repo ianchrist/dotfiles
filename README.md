@@ -1,4 +1,4 @@
-# dotfiles
+# Dotfiles
 
 ## Introduction
 The following are various configuration files used on my Arch Linux system. This is intended mainly as a backup, but it can also be used to help others when writing their configuration files for various pieces of software. The following repository starts in the home directory. This means that if you are viewing this repositories base directory, the files you see would go in the /home/$USER/ directory. Below are the files listed,where I will be going through all of the files in the base directory, and then start going deeper in the various directories.

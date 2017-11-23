@@ -10,4 +10,5 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # Launch polybar
 echo "Launching polybar..."
 polybar main &
+polybar tray &
 echo "Polybar launched"
