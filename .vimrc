@@ -1,3 +1,50 @@
+" Plugins installed under specified directory
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/goyo.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
+
+" List ends here
+call plug#end()
+
+syntax on
+filetype plugin indent on
+colorscheme deus
+
+" vim-airline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
+
+" vim-indent-guides settings
+let g:indent_guides_enable_on_vim_startup = 1
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+" vim-javascript settings
+let g:javascript_plugin_jsdoc = 1
+
+" vim-syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " gets rid of shared vi and vim features. Vim master race
 set nocompatible
 
@@ -27,12 +74,3 @@ set mouse=a
 set t_Co=256
 
 syntax on
-
-" work processor mode, including spellcheck
-func! WordProcessorMode()
-    setlocal textwidth=80
-    setlocal smartindent
-    setlocal spell spelllang=en_us
-    setlocal noexpandtab
-endfu
-com! WP call WordProcessorMode()

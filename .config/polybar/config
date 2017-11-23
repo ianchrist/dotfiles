@@ -6,7 +6,7 @@
 ;------------------------------------------------;
 
 [colors]
-background 	= #00FFFFFF
+background 	= #70000000
 foreground 	= #FFFFFF
 colour_1	= #707880
 colour_2	= #5F819D
@@ -22,8 +22,8 @@ padding-left = 3
 padding-right = 3
 line-size = 2
 
-background = #00FFFFFF
-foreground = #FFFFFF
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 font-1 = FiraMono:style=Regular:size=9;1
 font-2 = Dina:style=Regular:pixelsize=13;1
@@ -42,8 +42,8 @@ padding-left = 3
 padding-right = 3
 line-size = 2
 
-background = #00FFFFFF
-foreground = #FFFFFF
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 font-1 = FiraMono:style=Regular:size=9;1
 font-2 = Dina:style=Regular:pixelsize=13;1
