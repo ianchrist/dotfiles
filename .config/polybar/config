@@ -30,7 +30,7 @@ font-2 = Dina:style=Regular:pixelsize=13;1
 font-0 = FontAwesome:fontformat=truetype:size=8;1
 
 modules-left = i3
-modules-center = date
+modules-center = date weather
 modules-right = wifi volume battery powermenu
 
 
@@ -49,7 +49,7 @@ font-1 = FiraMono:style=Regular:size=9;1
 font-2 = Dina:style=Regular:pixelsize=13;1
 font-0 = FontAwesome:fontformat=truetypes:size=8;1
 
-modules-right = memory cpu connectivity
+modules-right = temperature memory cpu connectivity
 
 
 [module/battery]
@@ -194,3 +194,17 @@ interface = wlp3s0
 accumulate-stats = true
 
 label-connected =  %signal%% ↓%downspeed% ↑%upspeed%
+
+[module/temperature]
+type = internal/temperature
+label =  %temperature%
+label-padding = 3
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+exec = ~/.config/polybar/weather
+format-padding = 3
