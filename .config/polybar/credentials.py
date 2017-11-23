@@ -1,3 +1,7 @@
-city_id = "1234567"
-api_key = "my_api_key"
-units = "imperial"
+'''
+Variables for the weather file.
+'''
+
+CITY_ID = "1234567"
+API_KEY = "my_api_key"
+UNITS = "imperial"

@@ -1,15 +1,25 @@
 #!/bin/python
 # -*- coding: utf-8 -*-
 
+"""
+Polybar weather script.
+This is a simple script to get the weather for Polybar to use. It gets its
+information from openweathermap.org and grabs the needed info from the JSON
+file that the call provides. An API key must be obtained for this to work,
+and a file called credentials.py must also be created. In credentials, you
+must simply set the variables city_id, api_key, and units.
+"""
+
 import requests
 import credentials
 
-CITY = credentials.city_id
-API_KEY = credentials.api_key
-UNITS = credentials.units
+CITY = credentials.CITY_ID
+API_KEY = credentials.API_KEY
+UNITS = credentials.UNITS
 UNIT_KEY = "F"
 
-REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&appid={}&units={}".format(CITY, API_KEY, UNITS))
+REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&appid={}&units={}"
+                   .format(CITY, API_KEY, UNITS))
 try:
     # HTTP CODE = OK
     if REQ.status_code == 200:
