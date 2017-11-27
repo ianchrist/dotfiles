@@ -51,7 +51,6 @@
 
 	modules-right = temperature memory cpu connectivity
 
-
 [module/battery]
 	type = internal/battery
 	full-at = 97
@@ -135,7 +134,7 @@
 [module/memory]
 	type = internal/memory
 	interval = 3
-	label =  %percentage_used%
+	label =  %percentage_used%%
 	;label-padding = 3
 
 	[module/volume]
