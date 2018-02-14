@@ -98,3 +98,6 @@ if [ $DESKTOP_SESSION "!=" "i3" ]
 then
 	neofetch
 fi
+
+PATH=${PATH}:$HOME/bin:.
+export path
