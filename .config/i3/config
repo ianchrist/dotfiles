@@ -202,3 +202,6 @@ exec --no-startup-id compton -b
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #800000 #285577 #ffffff #2e9ef4   #285577
