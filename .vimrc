@@ -10,7 +10,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-syntastic/syntastic'
 
 " List ends here
 call plug#end()
